@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #6EACDA;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: rgb(247, 240, 240);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #6EACDA;
+    border-bottom: 3px solid #03346E;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #6EACDA;
+        border-bottom: 3px solid #6EACDA;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #03346E;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #6EACDA;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    box-shadow: 0 0 25px solid #051e3d;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #03346E;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #E2E2B6;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #ffffff;
+    box-shadow: 0  0 25px #f3f3f3;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #E2E2B6;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #E2E2B6;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #eceaea;
+    color: black;
+    box-shadow: 0 0 25px #eee6e6;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Student ";
+    color: #5892da;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #f7f4f4;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Student Web Developer";
+    }
+    21%, 40%{
+        content: "Gamer";
+    }
+    41%, 60%{
+        content: "Student programmer";
+    }
+    61%, 80%{
+        content: "Student";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}.education-content .row{
+    display: flex;
+    border-radius: 5px;
+    height: 400px;
+    margin-bottom: 250px;
+  }
+  
+  .education-content .title{
+    color: #66ccff;
+  }
+  .education-content .row .education,
+  .education-content .row .internship
+  {
+    color: #e5e5e5;
+    flex:0 0 50%;
+    max-width: 50%;
+    margin-top: 30px;
+  } 
+  .education-content  h3.title{
+    font-size:24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  .education-content .row.timeline-box{
+    flex:0 0 100%;
+    max-width: 100%;  
+  }
+  .education-content .row .timeline{
+    /* background-color:#e5e5e5; */
+    padding: 30px 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+  }
+  .education-content .row .timeline-item{
+    position:relative;
+    padding-left: 37px;
+    padding-bottom: 50px; 
+  }
+  .education-content .row  .internship .timeline-item{
+    position:relative;
+    padding-left: 37px;
+    padding-bottom: 30px; 
+  }
+  .education-content .row .timeline-item:last-child{
+    padding-bottom: 0;
+  }
+  .education-content .row .timeline-item::before{
+    content: "";
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background-color: #fed700;  
+  }
+  .education-content .row .circle-dot{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+  }
+  .education-content .row .timeline-title  {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .education-content .row .internship .timeline-title  {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .education-content .row .timeline-text{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+  }
